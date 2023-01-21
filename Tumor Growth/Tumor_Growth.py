@@ -33,11 +33,11 @@ cvolfile = File("%s.results/cvol.pvd" % (fileName))
 
 #################################### Read Images ####################################
 # Read MRI and segment images
-T2wS1 = Image.open('%s/RodinPaper/HumanBrain/levelset.png'%(dir_path)).load(); T2wS1_a = list()
-meshS = Image.open('%s/RodinPaper/HumanBrain/mesh.png'%(dir_path)).load(); meshS_a = list()
+T2wS1 = Image.open('%s/levelset.png'%(dir_path)).load(); T2wS1_a = list()
+meshS = Image.open('%s/mesh.png'%(dir_path)).load(); meshS_a = list()
 
 # Convert intensity values to array
-width, height = Image.open('%s/RodinPaper/HumanBrain/mesh.png'%(dir_path)).size
+width, height = Image.open('%s/mesh.png'%(dir_path)).size
 for i in range(height):
 	for k in range(width):
            T2wS1_a.append(T2wS1[k, height-1-i])
