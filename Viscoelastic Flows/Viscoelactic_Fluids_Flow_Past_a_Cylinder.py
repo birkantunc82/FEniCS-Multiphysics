@@ -1,3 +1,7 @@
+# Contact:
+# Birkan Tunc
+# tuncbirkan@gmail.com
+
 from dolfin import *
 import time
 from mshr import *
