@@ -1,6 +1,6 @@
 ## Implementing multiphysics models in FEniCS: Viscoelastic flows, poroelasticity, and tumor growth
 
-1) Viscoelastic fluids
+1) Viscoelastic fluids \
   1.1) Flow past a cylinder
   1.2) Extrudate flow
 2) Poroelasticity
