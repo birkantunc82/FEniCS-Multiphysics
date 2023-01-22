@@ -19,7 +19,7 @@ parameters["form_compiler"]["quadrature_degree"] = 12
 parameters['linear_algebra_backend'] = "PETSc"
 print('Linear algebra backend:',parameters['linear_algebra_backend'])
 
-# Delete existing folder and generate new files
+# Delete existing folders/files and generate new files
 dir_path = os.path.dirname(os.path.realpath(__file__))
 fileName = os.path.splitext(__file__)[0]
 myfile=("%s.results" % (fileName))
