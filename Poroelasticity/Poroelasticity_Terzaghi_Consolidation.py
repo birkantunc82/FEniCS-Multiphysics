@@ -116,30 +116,9 @@ prm['newton_solver']['relative_tolerance'] = 1.E-9
 prm['newton_solver']['maximum_iterations'] = 16
 
 # Reading points
-p1 = Point(0,L-TOL)
-p_1 = Point(0,L-0.5)
-p2 = Point(0,L-1.)
-p_2 = Point(0,L-1.5)
-p3 = Point(0,L-2.)
-p_3 = Point(0,L-2.5)
-p4 = Point(0,L-3.)
-p5 = Point(0,L-4.)
-p6 = Point(0,L-5.)
-p7 = Point(0,L-6.)
-p8 = Point(0,L-7.)
-p9 = Point(0,L-8.)
-p10 = Point(0,L-9.)
-p11 = Point(0,L-10.)
-p12 = Point(0,L-11.)
-p13 = Point(0,L-12.)
-p14 = Point(0,L-13.)
-p15 = Point(0,L-14.)
-p16 = Point(0,L-15.)
-p17 = Point(0,L-16.)
-p18 = Point(0,L-17.)
-p19 = Point(0,L-18.)
-p20 = Point(0,L-19.)
-p21 = Point(0,TOL)
+pointlist = [L-TOL, L-0.5, L-1., L-1.5, L-2., L-2.5, L-3., L-4.,\
+             L-5., L-6., L-7., L-8., L-9., L-10., L-11., L-12., \
+             L-13., L-14., L-15., L-16., L-17., L-18., L-19., TOL]
 
 # Solve problem
 iflag = 0
@@ -163,10 +142,12 @@ while abs(t-t_end) > TOL:
 
    # Write displacement data to file
    resfile = open("terzaghi_settlement_results.txt", "a")
-   resfile.write("%.6f, %.6f\n"%(t*c/L**2, (-ui1.sub(1)(p1)-w_0)/w_dif))
+   resfile.write("Tau: %.6f, Settlement: %.6f\n"%(t*c/L**2, (-ui1.sub(1)(Point(0,L-TOL))-w_0)/w_dif))
    resfile.close
 
 # Write pressure data to file
 resfile = open("terzaghi_pressure_results.txt", "a")
-resfile.write("%.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f\n"%(tau[index], pi1(p1)/p0, pi1(p_1)/p0, pi1(p2)/p0, pi1(p_2)/p0, pi1(p3)/p0, pi1(p_3)/p0, pi1(p4)/p0, pi1(p5)/p0, pi1(p6)/p0, pi1(p7)/p0, pi1(p8)/p0, pi1(p9)/p0, pi1(p10)/p0, pi1(p11)/p0, pi1(p12)/p0, pi1(p13)/p0, pi1(p14)/p0, pi1(p15)/p0, pi1(p16)/p0, pi1(p17)/p0, pi1(p18)/p0, pi1(p19)/p0, pi1(p20)/p0, pi1(p21)/p0))
+for i in range(len(pointlist)):
+   pointID = Point(0,pointlist[i])
+   resfile.write("z: %.6f, p/p0: %.6f\n"%(-(pointlist[i]-L)/L, pi1(pointID)/p0))
 resfile.close
