@@ -136,7 +136,7 @@ V = VectorElement("Lagrange", smesh.ufl_cell(), degree)  # Displacement / Refere
 C = FiniteElement("Lagrange", smesh.ufl_cell(), degree)  # Concentration
 Element = MixedElement([V, C, V])
 
-def getres(write=False, dstep=55.*2., t_end=5.5, alpha=1.):
+def getres(write=False, dstep=240., t_end=120., alpha=1.):
    
    # Material parameters
    kappa = .072
