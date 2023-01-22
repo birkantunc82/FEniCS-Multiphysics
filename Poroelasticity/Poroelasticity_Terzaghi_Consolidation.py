@@ -49,7 +49,7 @@ TOL = 1E-10
 # Time step
 tau = [0.0001, 0.001, 0.01, 0.04, 0.1, 0.4, 1., 1.5]
 t = 0.
-index = 7
+index = 6
 t_end = tau[index]*L**2/c
 dt = t_end/100.
 nsteps=int(t_end/dt);
