@@ -14,4 +14,4 @@ Contact: \
 Birkan Tunc, PhD \
 E-mail: tuncbirkan@gmail.com
 
-Please contact for the original work regarding the codes.
+Cite this work: "DOI for the original workregarding the codes is to be added soon !".
