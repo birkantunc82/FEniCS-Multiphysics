@@ -149,5 +149,5 @@ while abs(t-t_end) > TOL:
 resfile = open("terzaghi_pressure_results.txt", "a")
 for i in range(len(pointlist)):
    pointID = Point(0,pointlist[i])
-   resfile.write("z: %.6f, p/p0: %.6f\n"%(-(pointlist[i]-L)/L, pi1(pointID)/p0))
+   resfile.write("z_hat: %.6f, p/p0: %.6f\n"%(-(pointlist[i]-L)/L, pi1(pointID)/p0))
 resfile.close
