@@ -15,8 +15,7 @@ from PIL import Image
 parameters['allow_extrapolation'] = True
 parameters["form_compiler"]["cpp_optimize"] = True
 parameters["form_compiler"]["optimize"] = True
-parameters["form_compiler"]["quadrature_degree"] = 8
-ffc_options = {"quadrature_degree": 8, "optimize": True}
+parameters["form_compiler"]["quadrature_degree"] = 12
 
 # Delete existing folder and generate new files
 dir_path = os.path.dirname(os.path.realpath(__file__))
