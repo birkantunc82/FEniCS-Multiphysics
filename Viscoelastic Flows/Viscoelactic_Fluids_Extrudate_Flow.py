@@ -142,7 +142,7 @@ u_old=np.zeros(len(fsnodes))
 delta_u=np.zeros(len(fsnodes))
 vhat=np.zeros((2,len(fsnodes)))
 
-# Rigth boundary nodes
+# Outlet nodes
 rbnodes=list()
 for i in range(len(coords)):
    if coords[i][0] > LW2-TOL:
@@ -202,7 +202,7 @@ if run:
       for i in range(len(fsnodes)):
          coords[fsnodes[i][0]][1] += delta_u[i]
 
-      # Move the right boundary nodes   
+      # Move the outlet nodes   
       enddisp = delta_u[len(fsnodes)-1]
       for i in range(len(rbnodes)-2):
          coords[rbnodes[i+1][0]][1] += enddisp * rbnodes[i+1][2] / rbnodes[len(rbnodes)-1][2]
