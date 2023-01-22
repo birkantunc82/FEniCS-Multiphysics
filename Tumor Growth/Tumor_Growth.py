@@ -132,7 +132,7 @@ ls1 = Function(CS);
 ls1 = interpolate(li1,CS);
 
 # Define mixed element
-V = VectorElement("Lagrange", smesh.ufl_cell(), degree)  # Displacement
+V = VectorElement("Lagrange", smesh.ufl_cell(), degree)  # Displacement / Reference map
 C = FiniteElement("Lagrange", smesh.ufl_cell(), degree)  # Concentration
 Element = MixedElement([V, C, V])
 
