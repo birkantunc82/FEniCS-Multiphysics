@@ -39,10 +39,10 @@ Sigma0 = 1.
 TOL = 1E-8
 
 # Time step
-tau = [0.0001, 0.001, 0.01, 0.1, 1]
+t_hat = [0.0001, 0.001, 0.01, 0.1, 1]
 t = 0.
 index = 4
-t_end = tau[index]*a**2/c
+t_end = t_hat[index]*a**2/c
 dt = t_end/100.
 nsteps=int(t_end/dt);
 
@@ -129,18 +129,7 @@ prm['newton_solver']['relative_tolerance'] = 1E-9
 prm['newton_solver']['maximum_iterations'] = 16
 
 # Reading points
-rout1, rout2, rout3, rout4, rout5, rout6, rout7, rout8, rout9, rout10, rout11 = 30.+TOL, 33., 36., 39., 42., 45., 48., 51., 54., 57., 60.
-point1 = Point(rout1 * math.cos(math.radians(45)),rout1 * math.sin(math.radians(45)))
-point2 = Point(rout2 * math.cos(math.radians(45)),rout2 * math.sin(math.radians(45)))
-point3 = Point(rout3 * math.cos(math.radians(45)),rout3 * math.sin(math.radians(45)))
-point4 = Point(rout4 * math.cos(math.radians(45)),rout4 * math.sin(math.radians(45)))
-point5 = Point(rout5 * math.cos(math.radians(45)),rout5 * math.sin(math.radians(45)))
-point6 = Point(rout6 * math.cos(math.radians(45)),rout6 * math.sin(math.radians(45)))
-point7 = Point(rout7 * math.cos(math.radians(45)),rout7 * math.sin(math.radians(45)))
-point8 = Point(rout8 * math.cos(math.radians(45)),rout8 * math.sin(math.radians(45)))
-point9 = Point(rout9 * math.cos(math.radians(45)),rout9 * math.sin(math.radians(45)))
-point10 = Point(rout10 * math.cos(math.radians(45)),rout10 * math.sin(math.radians(45)))
-point11 = Point(rout11 * math.cos(math.radians(45)),rout11 * math.sin(math.radians(45)))
+pointlist = [30.+TOL, 33., 36., 39., 42., 45., 48., 51., 54., 57., 60.]
 
 # Solve problem
 iflag = 0
@@ -164,6 +153,7 @@ while abs(t-t_end) > TOL:
 
 # Write data to file
 resfile = open("Spherical_cavity_results.txt", "a")
-resfile.write("%.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f\n"%(pi1(point1)/Sigma0, pi1(point2)/Sigma0, pi1(point3)/Sigma0, pi1(point4)/Sigma0, pi1(point5)/Sigma0, pi1(point6)/Sigma0, pi1(point7)/Sigma0, pi1(point8)/Sigma0, pi1(point9)/Sigma0, pi1(point10)/Sigma0, pi1(point11)/Sigma0))
+for i in range(len(pointlist)):
+   pointID = Point(pointlist[i] * math.cos(math.radians(45)),pointlist[i] * math.sin(math.radians(45)))
+   resfile.write("R_hat: %.6f, p/Sigma0: %.6f\n"%(pointlist[i]/Ri, pi1(pointID)/Sigma0))
 resfile.close
-   
