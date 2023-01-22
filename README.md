@@ -10,8 +10,8 @@ This repository includes FEniCS implementations of:
 
 The codes were tested using Dolfin version 2019.1 installed on Docker on a Windows 10 Platform.
 
+Cite this work: "DOI for the original work regarding the codes is to be added soon !"
+
 Contact: \
 Birkan Tunc, PhD \
 E-mail: tuncbirkan@gmail.com
-
-Cite this work: "DOI for the original work regarding the codes is to be added soon !"
