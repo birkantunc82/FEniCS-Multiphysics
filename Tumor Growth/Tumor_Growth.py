@@ -16,6 +16,8 @@ parameters['allow_extrapolation'] = True
 parameters["form_compiler"]["cpp_optimize"] = True
 parameters["form_compiler"]["optimize"] = True
 parameters["form_compiler"]["quadrature_degree"] = 12
+parameters['linear_algebra_backend'] = "PETSc"
+print('Linear algebra backend:',parameters['linear_algebra_backend'])
 
 # Delete existing folder and generate new files
 dir_path = os.path.dirname(os.path.realpath(__file__))
