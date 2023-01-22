@@ -142,7 +142,7 @@ while abs(t-t_end) > TOL:
 
    # Write displacement data to file
    resfile = open("terzaghi_settlement_results.txt", "a")
-   resfile.write("Tau: %.6f, Settlement: %.6f\n"%(t*c/L**2, (-ui1.sub(1)(Point(0,L-TOL))-w_0)/w_dif))
+   resfile.write("t_hat: %.6f, Settlement: %.6f\n"%(t*c/L**2, (-ui1.sub(1)(Point(0,L-TOL))-w_0)/w_dif))
    resfile.close
 
 # Write pressure data to file
