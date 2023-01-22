@@ -153,17 +153,21 @@ rbnodes = np.sort(rbnodes, order='y')
 run = True
 if run:
    # Solve problem
-   iflag = 0
+   iflag = 0; nflag = 0;
    t = 0
    ufinal.rename("u", "u"); ufile << (ufinal, t)
    L2TOL=1
    while iflag < 11 or L2TOL > 1E-4:
 
-      # Print time step
-      t += dt
-      iflag += 1
-      if iflag<=10: velocity.t=t
-      print("\n Iteration: %d \n"%(iflag))
+      # Increment
+      if Newtonian:
+         iflag = 11; nflag += 1;
+         velocity.t = 1.
+         print("\n Iteration: %d \n"%(nflag))
+      else:
+         iflag += 1; t += dt;
+         if iflag<=10: velocity.t = t
+         print("\n Iteration: %d \n"%(iflag))
       
       # Solve
       solver.solve()
