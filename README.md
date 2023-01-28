@@ -12,7 +12,9 @@ The codes were tested using Dolfin version 2019.1 installed on Docker on a Windo
 
 ## Citation 
 
-DOI for the original work regarding the codes will be added once available !
+Birkan Tunç, Gregory J. Rodin, Thomas E. Yankeelov. Implementing multiphysics models in FEniCS: Viscoelastic flows, poroelasticity, and tumor growth,
+Biomedical Engineering Advances, 2023, 100074, ISSN 2667-0992, https://doi.org/10.1016/j.bea.2023.100074.
+
 
 ## Contact
 Birkan Tunc, PhD \
